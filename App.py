@@ -7,19 +7,16 @@ class Product:
         self.stock_level = stock_level
         self.monthly_units_manufactured = monthly_units_manufactured
 
-class Application:
-    def __init__(self):
-        self.products = []  # List to store product instances
-
     def create_product(self, product_code, product_name, sale_price, manufacture_cost, stock_level, monthly_units_manufactured):
         product = Product(product_code, product_name, sale_price, manufacture_cost, stock_level, monthly_units_manufactured)
         self.products.append(product)
 
-    def simulate_production_and_sales(self):
-        # Implement simulation logic here
-
-    def generate_stock_statement(self):
-        # Implement stock statement generation here
-
-    def run(self):
-        # Main application logic
+    def getProductinput():
+        product_name = input("Enter Product Name: ")    
+        while True:
+            product_code = int(input("Enter Product Code (100 to 1000): "))
+            if 100 <= product_code <= 1000:
+                break
+            else:
+                print("Invalid input. Product code must be between 100 and 1000.")
+        return product_code, product_name, sale_price, manufacture_cost, stock_level, monthly_units_manufactured
