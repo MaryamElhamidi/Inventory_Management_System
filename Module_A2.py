@@ -7,21 +7,21 @@ class Product:
         self.stock_level = stock_level
         self.monthly_units_manufactured = monthly_units_manufactured
 
-    def getProductcode(self):
+    def getProductcode(self): #Gets the product_code
         return self.product_code #Returns the product name
     
-    def getProductname(self):
+    def getProductname(self): #Gets the product_name
         return self.product_name #Returns the product name
     
-    def getSaleprice(self):
+    def getSaleprice(self):#Gets the sale_price
         return self.sale_price #Returns the product name
     
-    def getManufacturecost(self):
+    def getManufacturecost(self):#Gets the manufacture_cost
         return self.manufacture_cost #Returns the product name
     
-    def getStocklevel(self):
+    def getStocklevel(self):#Gets the stock_level
         return self.stock_level #Returns the product name
     
-    def getMonthlyunits(self):
+    def getMonthlyunits(self):#Gets the monthly_units_manufactured)
         return self.monthly_units_manufactured #Returns the product name
     
