@@ -24,3 +24,4 @@ class Product:
     
     def getMonthlyunits(self):
         return self.monthly_units_manufactured
+    

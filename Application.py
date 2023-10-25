@@ -1,7 +1,6 @@
 from Module_A2 import Product
 
 def setProductinfo():
-
     product_name = input("Enter Product Name: ")
 
     sale_price = float(input("Enter Product Sale Price: "))
@@ -42,13 +41,25 @@ def setProductinfo():
         print("Invalid input. Product code must be between 100 and 1000.")
         product_code = int(input("Enter Product Code (100 to 1000): "))
 
-    product = Product(product_code, product_name, sale_price, manufacture_cost, stock_level, monthly_units_manufactured)
-    print("Product Code: ", product.getProductcode())
-    print("Product Name: ", product.getProductname())
-    print("Sale Price: ", product.getSaleprice())
-    print("Manufacture Cost: ", product.getManufacturecost())
-    print("Stock Level:" , product.getStocklevel())
-    print("Estimated Monthly Units Manufactured:" , Product.getMonthlyunits())
+    sampleproduct = Product(product_code, product_name, sale_price, manufacture_cost, stock_level, monthly_units_manufactured)
+    print("Product Code: ", sampleproduct.getProductcode())
+    print("Product Name: ", sampleproduct.getProductname())
+    print("Sale Price: ", sampleproduct.getSaleprice())
+    print("Manufacture Cost: ", sampleproduct.getManufacturecost())
+    print("Stock Level:" , sampleproduct.getStocklevel())
+    print("Estimated Monthly Units Manufactured:" , sampleproduct.getMonthlyunits())
+    
+    
+#def setMonthlyproduction():
+    stock =  stock_level + monthly_units_manufactured
+
+    print("Month : ")
+    print("Manufactured:" )
+    print("Sold : unitsSold")
+    print("Stock :")   
+    print ("Net Profit: " , netProfit)
 
 
-print(getProductinput())
+
+
+print(setProductinfo())
