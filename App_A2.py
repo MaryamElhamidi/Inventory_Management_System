@@ -24,7 +24,7 @@ class Product:
         
         return product_code, product_name, sale_price, manufacture_cost, stock_level, monthly_units_manufactured
  
-"""""    
+
 class Bonus:    
     
     def getProductsale(self,product_code,units_to_sell):
@@ -46,4 +46,3 @@ class Bonus:
                         print("Sale declined.")
                         return False
         print("Product not found.")
-"""
