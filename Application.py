@@ -127,5 +127,3 @@ class Application(Product):
 
 product_execution = Application.setProductinfo() #Object of the class
 print(product_execution) #Prints the object, allowing for user interaction.
-
-#BONUS - PART 3: Print the details of sales that could not be fulfilled at the end of the report.
