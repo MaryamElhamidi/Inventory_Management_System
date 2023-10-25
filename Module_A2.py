@@ -25,3 +25,14 @@ class Product:
     def getMonthlyunits(self):#Gets the monthly_units_manufactured)
         return self.monthly_units_manufactured #Returns the product name
     
+    #BONUS - PART 1 
+    def process_sale(product, units_to_sell): #Add a check to ensure the stock never goes negative while processing a sale. 
+        if units_to_sell <= product.stock_level:
+            product.stock_level -= units_to_sell
+            return units_to_sell
+        else:
+            sold_units = product.stock_level
+            product.stock_level = 0
+            return sold_units
+    
+    
