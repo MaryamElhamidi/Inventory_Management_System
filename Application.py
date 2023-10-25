@@ -1,4 +1,5 @@
 from Module_A2 import Product
+import random
 
 def setProductinfo():
     product_name = input("Enter Product Name: ")
@@ -50,15 +51,24 @@ def setProductinfo():
     print("Estimated Monthly Units Manufactured:" , sampleproduct.getMonthlyunits())
     
     
-#def setMonthlyproduction():
-    stock =  stock_level + monthly_units_manufactured
+    
+    for month in range(1,13):
+        stock_value = monthly_units_manufactured + stock_level
+        lower_bound = max(1, monthly_units_manufactured - 10)
+        upper_bound = min(monthly_units_manufactured + 10, monthly_units_manufactured)
+        sale_units = random.randint(lower_bound, upper_bound)
+        stock_calculated = stock_value - sale_units
 
-    print("Month : ")
-    print("Manufactured:" )
-    print("Sold : unitsSold")
-    print("Stock :")   
-    print ("Net Profit: " , netProfit)
-
+        print(f"Month {month} :" )
+        print("Manufactured: ",monthly_units_manufactured, "units") 
+        print("Sold:", sale_units, "units")  
+        print("Stock: ", stock_calculated, "units")
+        stock_calculated = stock_value - sale_units
+    
+        yearly_manufature_profits =+ monthly_units_manufactured
+        yearly_sale_profits =+ sale_units
+    net_profit = (yearly_sale_profits * sale_price) - (yearly_manufature_profits * manufacture_cost)
+    print("Net Profit: $", net_profit, "CAD")
 
 
 
