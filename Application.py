@@ -108,13 +108,13 @@ class Application(Product):
         for month in range(1,13):
             stock_value = sampleproduct.getMonthlyunits() + sampleproduct.getStocklevel()
             lower_bound = max(1, sampleproduct.getMonthlyunits() - 10)
-            upper_bound = min(sampleproduct.sgetMonthlyunits() + 10, sampleproduct.getMonthlyunits())
+            upper_bound = min(sampleproduct.getMonthlyunits() + 10, sampleproduct.getMonthlyunits())
             sale_units = random.randint(lower_bound, upper_bound)
 
             sold_units = Application.process_sale(sampleproduct, sale_units)
 
             if sold_units < sale_units:
-                unsold_sales.append(f"Month {month}: {sale_units} units sold, {sale_units - sold_units} units unsold")
+                unsold_sales = unsold_sales.append(f"Month {month}: {sale_units} units sold, {sale_units - sold_units} units unsold")
         #BONUS - PART 3: Prints the details of sales that could not be fulfilled
         if unsold_sales:
             print("Sales that could not be fulfilled:")
