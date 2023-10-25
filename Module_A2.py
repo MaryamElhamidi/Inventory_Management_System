@@ -10,4 +10,17 @@ class Product:
     def getProductcode(self):
         return self.product_code 
     
-    def get
+    def getProductname(self):
+        return self.product_name
+    
+    def getSaleprice(self):
+        return self.sale_price
+    
+    def getManufacturecost(self):
+        return self.manufacture_cost
+    
+    def getStocklevel(self):
+        return self.stock_level
+    
+    def getMonthlyunits(self):
+        return self.monthly_units_manufactured

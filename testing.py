@@ -1,8 +1,7 @@
 from Module_A2 import Product
-person1 = Product(101, 'chocolate', 3.99, 0.99, 100, 50 )
-print(person1.getProductinput())
 
-def getProductinput(self):
+
+def getProductinput():
     product_name = input("Enter Product Name: ")
     if product_name.isalpha():
         pass
