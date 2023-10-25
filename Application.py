@@ -77,7 +77,10 @@ class Application(Product):
             upper_bound = min(monthly_units_manufactured + 10, monthly_units_manufactured)
             sale_units = random.randint(lower_bound, upper_bound) #Estimates the units sold
             
-            
+            #BONUS
+            if sale_units > stock_value: # Check if the sale_units exceed the available stock
+                unfilled_sales.append((month, sale_units, stock_value))  # Store details of unfilled sales
+                sale_units = stock_value # Adjust sale_units to be equal to the available stock           
             
             stock_calculated = stock_value - sale_units #Shows the updated and calculated stock level
             
@@ -94,6 +97,12 @@ class Application(Product):
         net_profit = (yearly_sale_profits * sale_price) - (yearly_manufature_profits * manufacture_cost) #Calculates net profit
         rounded = round(net_profit, 2) #Rounds the net profit to 2 decimal places.
         print("Net Profit: $", rounded, "CAD") #Displays net profit
+        
+        #BONUS - Print the details of sales that could not be fulfilled at the end of the report.
+        if unfilled_sales:
+            print("\nDetails of Sales that could not be fulfilled:")
+            for month, requested_units, available_units in unfilled_sales:
+                print(f"Month {month}: Requested {requested_units} units but only had {available_units} units available")        
 
 
 product_execution = Application.setProductinfo() #Object of the class
