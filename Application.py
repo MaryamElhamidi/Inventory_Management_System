@@ -68,12 +68,20 @@ class Application(Product):
         print("Stock Level:" , sampleproduct.getStocklevel())#Displays the stock level
         print("Estimated Monthly Units Manufactured:" , sampleproduct.getMonthlyunits())#Displays the monthly units manufactured
         
+        unfilled_sales = []  # Create a list to store details of sales that could not be fulfilled
+
+
         for month in range(1,13): #For loop for the months, ensuring to simultaneously print every month's production
             stock_value = monthly_units_manufactured + stock_level #Adds monthly units manufactured to the actual stock value
             lower_bound = max(1, monthly_units_manufactured - 10) #Creates a max and min for the sale units object
             upper_bound = min(monthly_units_manufactured + 10, monthly_units_manufactured)
             sale_units = random.randint(lower_bound, upper_bound) #Estimates the units sold
+            
+            
+            
             stock_calculated = stock_value - sale_units #Shows the updated and calculated stock level
+            
+
 
             print(f"Month {month} :" ) #Displays Months
             print("Manufactured: ",monthly_units_manufactured, "units") # Displays manufactured units
@@ -90,4 +98,3 @@ class Application(Product):
 
 product_execution = Application.setProductinfo() #Object of the class
 print(product_execution) #Prints the object, allowing for user interaction.
-#Testing how to get it to git...
