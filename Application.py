@@ -68,7 +68,7 @@ class Application(Product):
         print("Stock Level:" , sampleproduct.getStocklevel())#Displays the stock level
         print("Estimated Monthly Units Manufactured:" , sampleproduct.getMonthlyunits())#Displays the monthly units manufactured
         
-        unfilled_sales = []  # Create a list to store details of sales that could not be fulfilled
+        unfilled_sales = []  #BONUS - Create a list to store details of sales that could not be fulfilled
 
 
         for month in range(1,13): #For loop for the months, ensuring to simultaneously print every month's production
