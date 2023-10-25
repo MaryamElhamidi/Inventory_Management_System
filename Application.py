@@ -89,8 +89,43 @@ class Application(Product):
         net_profit = (yearly_sale_profits * sale_price) - (yearly_manufature_profits * manufacture_cost) #Calculates net profit
         rounded = round(net_profit, 2) #Rounds the net profit to 2 decimal places.
         print("Net Profit: $", rounded, "CAD") #Displays net profit
-          
+    
+    #BONUS - PART 1 
+    def process_sale(monthly_units_manufactured, stock_level, sale_units): #Add a check to ensure the stock never goes negative while processing a sale. 
+        if monthly_units_manufactured <= stock_level:
+            stock_level -= monthly_units_manufactured
+            return monthly_units_manufactured
+        else:
+            sale_units = stock_level
+            stock_level = 0
+            return sale_units
+    
+    
+    #BONUS - PART 2 
+    def simulate_sales(sampleproduct): #choose to either decline the sale or sell only as many units as are available in the stock 
+        unsold_sales = []
+
+        for month in range(1,13):
+            stock_value = sampleproduct.getMonthlyunits() + sampleproduct.getStocklevel()
+            lower_bound = max(1, sampleproduct.getMonthlyunits() - 10)
+            upper_bound = min(sampleproduct.sgetMonthlyunits() + 10, sampleproduct.getMonthlyunits())
+            sale_units = random.randint(lower_bound, upper_bound)
+
+            sold_units = Application.process_sale(sampleproduct, sale_units)
+
+            if sold_units < sale_units:
+                unsold_sales.append(f"Month {month}: {sale_units} units sold, {sale_units - sold_units} units unsold")
+        #BONUS - PART 3: Prints the details of sales that could not be fulfilled
+        if unsold_sales:
+            print("Sales that could not be fulfilled:")
+            for unsold_sale in unsold_sales:
+                print(unsold_sale)
+        else:
+            print("All sales were successfully fulfilled.")
+        return unsold_sales          
 
 
 product_execution = Application.setProductinfo() #Object of the class
 print(product_execution) #Prints the object, allowing for user interaction.
+
+#BONUS - PART 3: Print the details of sales that could not be fulfilled at the end of the report.
